@@ -1,0 +1,36 @@
+{
+  "name": "NextBlog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HDias/NextBlog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HDias/NextBlog/issues"
+  },
+  "homepage": "https://github.com/HDias/NextBlog#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "next": "^10.0.7",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.5.1",
+    "react-dom": "^17.0.1",
+    "sass": "^1.32.8"
+  },
+  "devDependencies": {
+    "@types/next": "^9.0.0",
+    "@types/react": "^17.0.2",
+    "@types/react-bootstrap": "^0.32.25",
+    "@types/react-dom": "^17.0.1"
+  }
+}
