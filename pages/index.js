@@ -19,7 +19,6 @@ function Home({ posts }) {
                                     height={75}
                                 />
                             </div>
-
                             <div class="col-md-8">
                                 <div class="card-body h-100 position-relative">
                                     <h5 class="card-title">{post.title}</h5>
