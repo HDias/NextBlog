@@ -5,7 +5,9 @@ import Menu from '../components/menu'
 function MyApp({ Component, pageProps }) {
     return (<div>
       <Menu />
-      <Component {...pageProps} />
+      <div class="container-fluid">
+        <Component {...pageProps} />
+      </div>
     </div>)
   }
   
