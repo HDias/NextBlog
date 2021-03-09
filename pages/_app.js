@@ -1,13 +1,13 @@
 import styles from '../styles/globals.scss'
-import Menu from '../components/menu'
+import Header from '../components/header'
+import Footer from '../components/footer'
 
 // https://nextjs.org/docs/advanced-features/custom-app
 function MyApp({ Component, pageProps }) {
     return (<div>
-      <Menu />
-      <div class="container-fluid">
-        <Component {...pageProps} />
-      </div>
+      <Header />
+      <Component {...pageProps} />
+      <Footer />
     </div>)
   }
   
