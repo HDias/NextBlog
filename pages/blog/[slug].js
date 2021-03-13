@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
-export default function Post({ postData }) {
-  const router = useRouter()
-  const { slug } = router.query
+export default function Post() {
+  const router = useRouter();
+  const { slug } = router.query;
 
-  return <p>Post: {slug}</p>
+  return <p>Post: { slug }</p>
 }
 
 export async function getStaticPaths() {
@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = getPostData(params.id)
+  const postData = getPostData(params.slug)
   
   return {
     props: {
