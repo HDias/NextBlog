@@ -36,7 +36,7 @@ function Home({ posts }) {
 
 export function getStaticProps() {
     const posts = getAllPosts();
-    console.log(posts)
+    
     return {
         props: {
             posts
