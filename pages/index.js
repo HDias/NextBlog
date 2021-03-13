@@ -1,5 +1,5 @@
 import Carousel from '../components/carousel';
-import { getAllPosts } from '../lib/posts/posts';
+import { getAllPosts } from '../lib/posts';
 
 function Home({ posts }) {
     return (<div>
@@ -12,8 +12,8 @@ function Home({ posts }) {
                 </div>
             </div>
             <div class="row mb-2">
-                {posts.map((post) => (
-                    <div class="col-md-6">
+                {posts.map((post, index) => (
+                    <div class="col-md-6" key={index.toString()}>
                         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col p-4 d-flex flex-column position-static">
                             <strong class="d-inline-block mb-2 text-primary">World</strong>
