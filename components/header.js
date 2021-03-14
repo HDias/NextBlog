@@ -26,9 +26,6 @@ function Header() {
                     <Link href="/">
                         <a class="p-2 link-secondary">Home</a>
                     </Link>
-                    <Link href="/blog">
-                        <a class="p-2 link-secondary">Blog</a>
-                    </Link>
                     <Link href="/video">
                         <a class="p-2 link-secondary">Videos</a>
                     </Link>
