@@ -9,7 +9,7 @@ function Home({ posts }) {
                 <div class="col-md-6 px-0">
                     <h1 class="display-4 fst-italic">Você não precisa ter medo da dor no parto.</h1>
                     <p class="lead my-3">Descubra com esse simples EBOOK que você pode sim tornar o seu parto um momento único.</p>
-                    <p class="lead mb-0"><a href="#" class="text-white fw-bold">Baixe aqui seu EBOOK...</a></p>
+                    <p class="lead mb-0"><a href="http://eepurl.com/cZOdar" target="_blank" class="text-white fw-bold">Baixe aqui seu EBOOK...</a></p>
                 </div>
             </div>
             <div class="row mb-2">

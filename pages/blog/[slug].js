@@ -1,5 +1,6 @@
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import { formatDate } from '../../lib/date';
+import parse from 'html-react-parser';
 
 export default function Post({ postData }) {
   return (<div>
@@ -10,8 +11,7 @@ export default function Post({ postData }) {
       <article class="blog-post">
         <h2 class="blog-post-title">{ postData.title }</h2>
         <p class="blog-post-meta">{ formatDate({strDate: postData.dt_pub,  formatDate: 'dd/MM/yy'}) } by <strong>Isadoula</strong></p>
-        <div dangerouslySetInnerHTML={{__html: postData.content}}>
-        </div>      
+        {parse(postData.content)}
       </article>
     
     </main>
