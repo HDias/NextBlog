@@ -1,50 +1,38 @@
 import React from 'react'
-import {
-  useAuthUser,
-  withAuthUser,
-  withAuthUserTokenSSR,
-} from 'next-firebase-auth'
 import { getAllPosts } from '../lib/posts';
 import { formatDate } from '../lib/date';
-import Header from '../components/header'
-import Footer from '../components/footer'
 
 function Home({ posts }) {
-  const AuthUser = useAuthUser()
-  return (<div>
-
-    <Header email={AuthUser.email} signOut={AuthUser.signOut} />
-    <main class="container">
-
-      <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
-          <h1 class="display-4 fst-italic">Você não precisa ter medo da dor no parto.</h1>
-          <p class="lead my-3">Descubra com esse simples EBOOK que você pode sim tornar o seu parto um momento único.</p>
-          <p class="lead mb-0"><a href="http://eepurl.com/cZOdar" target="_blank" class="text-white fw-bold">Baixe aqui seu EBOOK...</a></p>
+  return (
+    <div>
+      <main class="container">
+        <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+          <div class="col-md-6 px-0">
+            <h1 class="display-4 fst-italic">Você não precisa ter medo da dor no parto.</h1>
+            <p class="lead my-3">Descubra com esse simples EBOOK que você pode sim tornar o seu parto um momento único.</p>
+            <p class="lead mb-0"><a href="http://eepurl.com/cZOdar" target="_blank" class="text-white fw-bold">Baixe aqui seu EBOOK...</a></p>
+          </div>
         </div>
-      </div>
-      <div class="row mb-2">
-        {posts.map((post, index) => (
-          <div class="col-md-6" key={index.toString()}>
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-              <div class="col p-4 d-flex flex-column position-static">
-                <h3 class="mb-0">{post.title}</h3>
-                <div class="mb-1 text-muted">{formatDate({ strDate: post.dt_pub, formatDate: 'dd/MM/yy' })}</div>
-                {/* <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p> */}
-                <a href={'/blog/' + post.slug} class="stretched-link"><small>Continue lendo...</small></a>
-              </div>
-              <div class="col-auto d-none d-lg-block">
-                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        <div class="row mb-2">
+          {posts.map((post, index) => (
+            <div class="col-md-6" key={index.toString()}>
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <h3 class="mb-0">{post.title}</h3>
+                  <div class="mb-1 text-muted">{formatDate({ strDate: post.dt_pub, formatDate: 'dd/MM/yy' })}</div>
+                  {/* <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p> */}
+                  <a href={'/blog/' + post.slug} class="stretched-link"><small>Continue lendo...</small></a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                  <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </main>
-
-    <Footer />
-
-  </div>)
+          ))}
+        </div>
+      </main>
+    </div>
+  )
 }
 
 export function getStaticProps() {
@@ -57,7 +45,4 @@ export function getStaticProps() {
   }
 }
 
-// export const getServerSideProps = withAuthUserTokenSSR()()
-
-export default withAuthUser()(Home)
-// export default Home
+export default Home

@@ -10,7 +10,7 @@ const AuthBtn = ({ email, signOut }) => (
           onClick={() => {
             signOut()
           }}
-        > {email} - Sair
+        > Sair
         </a>
       </>
     ) : (
