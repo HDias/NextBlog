@@ -1,13 +1,12 @@
 import styles from '../styles/globals.scss'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import initAuth from '../lib/initAuth'
+
+initAuth()
 
 // https://nextjs.org/docs/advanced-features/custom-app
 function MyApp({ Component, pageProps }) {
     return (<div>
-      <Header />
       <Component {...pageProps} />
-      <Footer />
     </div>)
   }
   
